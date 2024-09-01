@@ -1,0 +1,5 @@
+#SYS 255 Lab 1
+* After connecting network adapters assign each of them interfaces, do not configure VLANs at this point.
+* After assigning them each interfces, set the correct ip addresses for each. Select ip address, subnet mask, upstream gateway address and usually https over http. 
+
+* To adjust firewall go to connect to network go to pfSense by typing in the LAN IP address to the browser bar. Then make sure to uncheck "block private networks from entering via WAN" so you can enter wit ha WAN connection.
