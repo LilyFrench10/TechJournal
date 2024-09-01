@@ -1,0 +1,12 @@
+#SYS 255 Lab 1
+* After connecting network adapters assign each of them interfaces, do not configure VLANs at this point.
+* After assigning them each interfces, set the correct ip addresses for each. Select ip address, subnet mask, upstream gateway address and usually https over http. 
+
+* To adjust firewall go to connect to network go to pfSense by typing in the LAN IP address to the browser bar. Then make sure to uncheck "block private networks from entering via WAN" so you can enter wit ha WAN connection.
+
+*Terms I learned
+*WAN - Wide Area Network, it a collection of LAN networks  over a large area which allows connections all over the world. https://www.cisco.com/c/en/us/products/switches/what-is-a-wan-wide-area-network.html#~what-it-is
+*LAN- Local Area Network, unlike WAN, LAN can only connect to other users in the network. https://aws.amazon.com/compare/the-difference-between-lan-and-wan/#:~:text=LAN%20means%20local%20area%20network,WAN%20means%20wide%20area%20network.&text=LANs%20connect%20users%20and%20applications,locations%20(across%20the%20globe). 
+*MAC address - Media Access Control address, unique address for network interface controller. https://en.wikipedia.org/wiki/MAC_address 
+*Upstream gateway - router that connects to  different network segment while being physically connected to WAN https://forum.opnsense.org/index.php?topic=2060.0#:~:text=Generally%2C%20that%20%22upstream%22%20is,you%20configure%20for%20your%20WAN. 
+*Default gateway - if a packet is recieved and the destinatio naddress has no matches it is sent to the default gateway, which forwards it to the correct network. https://en.wikipedia.org/wiki/Default_gateway#:~:text=A%20default%20gateway%20is%20the,IP%20address%20of%20a%20packet. 
