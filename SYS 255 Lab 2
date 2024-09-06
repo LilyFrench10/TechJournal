@@ -1,0 +1,16 @@
+Active Directory and DNS
+
+ADDS- Active Directory Domain Services - contains infomation such as user accounts and computers on the network
+
+Common DNS record types
+A - address record name to IPv4
+CNAME - canonical name record, alias one name to another
+AAAA - address record to resolve ipv6 to name
+PTR- pointer record IPv4 to name (inverse query)
+MX- mail exchange, email
+SRV= service locator find conference servers and sip servers
+
+Active Directory Domain Services can store DNS records so users can do things such as, accessing an IP address from a domain name, access a domain name from an IP address
+
+DNS can use TCP or UDP depending on the size of the packet
+Authoritative Name Servers store information about domai nnames and their IP addresses. 
