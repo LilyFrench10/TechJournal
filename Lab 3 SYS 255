@@ -1,0 +1,16 @@
+Set IP in centOS
+nmtui
+edit a connection
+set IP to manual
+select show and enter address
+
+
+Linux commands
+grep - look for string in output, used for sorting
+clear - clears terminal
+cat - displays file contents
+locate - find file in database
+cp - copy files to defferent directory
+useradd
+passwd - set password for user
+cd .. - go to default directory
