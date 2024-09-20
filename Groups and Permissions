@@ -1,0 +1,18 @@
+groupadd
+usermod -aG groupname username
+
+
+
+chmod 
+o = other
+g =group
+u =user owns
+a =all
++wrx
+-wrx
+=wrx
+
+chgrp changes group
+chown changes owner
+ls -ld shows directories and permissions
+ls -l shows permissions
