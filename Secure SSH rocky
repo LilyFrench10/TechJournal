@@ -1,0 +1,2 @@
+Disable sshd access by editing the /etc/ssh/sshd_config file changing “PermitRootLogin” to “no” instead of “yes”
+systemctl restart sshd for it to take effect
