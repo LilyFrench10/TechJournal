@@ -1,0 +1,9 @@
+Change lease time by editing /etc/dhcpd.conf
+default-lease-time 3600; #default to 1 hour
+max-lease-time 14400;
+
+
+journalctl | grep -i <ip address or name of system looking for>
+scope - full range of possible IP addresses for server for DHCP
+address pool - IP addresses available after scope is defined
+lease- length a client can use an ip address connected to from dhcp
