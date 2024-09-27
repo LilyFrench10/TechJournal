@@ -1,0 +1,184 @@
+https://drive.google.com/file/d/18dBh7uOzAVcfZNqsovNpcyxSaIoKbgQP/view?usp=sharing 
+
+Fw01 firewall
+Adapter 1 wan(em0) , 2 lan (em1)
+
+Set ips
+Wan -10.0.17.104 ipv4
+Wan gateway 10.0.17.2
+Lan - 10.0.5.2
+
+No http for gui
+
+
+
+
+Wks01 windows 10
+This pc, properties, change settings, change, to renamethis computer
+Computer management, make a super user lily.french-loc in local users and groups
+
+Ip until dhcp 10.0.5.100
+Gateway 10.0.5.2
+Preferred DNS 10.0.5.5
+
+Go to 10.0.5.2 on chrome
+Hostname fw1-lily
+Domain lily.local
+Primary dns 8.8.8.8 
+Secondary dns 1.1.1.1
+
+Uncheck “block private networks ia wan …”
+User manager set root password
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ad01
+AD01-lily
+Lan
+Product key do this later
+
+Server manager
+
+Ip 10.0.5.5
+Mask 255.255.255.0
+Gateway 10.0.5.2
+DNS 10.0.5.2
+
+DO allow pc to be discoverable
+ Reboot
+
+
+
+Add roles and features
+Active directory domain services -> add features ADDS checked on
+
+ 
+
+
+Promote this server to a domain controller
+Add new forest lily.local
+DSRM password
+
+Log in as admin
+DNS point to local loopback ip (127.0.0.1)
+
+In DNS
+Forward lookup zone lily.local
+New host for all
+“Update associated ptr record”
+
+Reverse dns for all
+
+
+
+Make name domain admin and normal ser 
+Active directory users and computers
+Lily.french-adm  add to group domain admins
+Go to wks01 
+System properties, change computer name , use adm for userpass
+restart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DCHP01
+
+Use nmtui
+Ip add 10.0.5.3
+Gateway 10.0.5.2
+DNS 10.0.5.5 
+Search domain lily.local
+Hostname dhcp01-lily
+Systemctl restart network
+
+Add named user to “wheel group”
+Useradd name
+Passwd name
+Usermod -aG wheel name
+
+Create and go to directory sys255
+sudo yum install tree
+(-y tree????)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DHCP THROUGH AD01
+Server manager, internet explorer enhanced security configuration, admins off
+Program files to find web browser
+Intall putty 
+Connect to dhcp01-lily via putty
+Sudo yum install dhcp
+Sudo -i
+Vi /etc/dhcp/dhcpd.conf or nano /etc/dhcp/dhcpd.conf
+
+“subnet 10.0.5.0 netmask 255.255.255.0 {
+	option routers 10.0.5.2;
+	option subnet-mask 255.255.255.0;
+	option domain-name “lily.local”;
+	option domain-name-servers 10.0.5.5;
+	Range 10.0.5.100 10.0.5.150;
+}
+“
+
+Systemctl start dhcpd
+Ststemctl enable dhcpd
+Firewall-cmd –add-service=dhcp –permanent
+Firewall-cmd –reload
+
+Go on wks01
+Ethernet properties
+Obtain an ip address automatically
+Obtain dns server automatically
