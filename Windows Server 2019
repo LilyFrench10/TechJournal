@@ -1,0 +1,29 @@
+Microsoft Windows Server 
+Sconfig to set computer name, ip, network, etc
+
+
+How to create a new drive mapped to a share location
+
+Open Group Policy Management Console
+
+Create a new Group Policy Object (GPO) or edit an existing one that applies to the users you want to access it.
+
+User Configuration > Preferences > Windows Settings > Drive Maps.
+
+Right-click in the right pane and select New > Mapped Drive.
+
+New Drive Properties
+Set Action to Create
+Set Location to share location
+Set Drive Letter to S:
+Check the Reconnect box
+Set Label (optional)
+
+Switch to the Common tab and select"Item-level targeting".
+Click the Targeting button and add a new item:
+Select New Item > Security Group
+
+
+Link the gpo to the appropriate ou for your users.
+
+
