@@ -1,0 +1,8 @@
+In AD add DHCP service to server ex: fs01 
+also add DHCP management tools to AD server in order to gain access to DHCP management in 
+
+in administrator tools,  DHCP management tools authorize server, set scope, etc
+
+in server allow dhcp through firewall
+if cmd use .........   netsh advfirewall firewall add rule name="DHCP Client" dir=in action=allow protocol=UDP
+
