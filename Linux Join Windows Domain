@@ -1,4 +1,6 @@
 make sure you are in the correct directory
+yum update
+
 yum install realmd oddjob oddjob-mkhomedir sssd adcli samba-common-tools
 
 realm join -v --membership-software=adcli -U username domain name
