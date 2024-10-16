@@ -1,0 +1,7 @@
+make sure you are in the correct directory
+yum install realmd oddjob oddjob-mkhomedir sssd adcli samba-common-tools
+
+realm join -v --membership-software=adcli -U username domain name
+the -v checks if domain was connected to, even if you fail to join
+
+make sure ports 111 and 2049 are open
