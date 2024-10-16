@@ -1,0 +1,9 @@
+install apache
+dnf install -y httpd
+systemctl start, enable, and status httpd
+
+put webpage info in /var/www/html
+
+firewall for apache
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd reload
