@@ -1,0 +1,25 @@
+Start by cabling, set devices to lan, except gateway which is adapter 1 wan adapter 2 lan
+
+for pfsense router/gateway
+wan= em0 lan=em1
+wan ipv4 is unique
+
+use windows to set up pfsense by going to https://your-gateway-ip
+Uncheck block RFC1918 Private Networks
+
+windows setup
+check cabling
+cset ip, dns/subnet, and gateway
+create user by going to computer management- ad neww user, then adding them to the administrator group to make them an admin
+
+to change computer name this pc, properties, change settings, change, to renamethis computer
+
+
+Windows Server command line
+sconfig
+
+use powershell to set up domain
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+Install-ADDSForest -DomainName name
+
+
