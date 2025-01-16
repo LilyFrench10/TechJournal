@@ -21,3 +21,7 @@ sconfig
 use powershell to set up domain
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 Install-ADDSForest -DomainName name
+
+
+To add Remote Server Admin Tools use server manager
+
