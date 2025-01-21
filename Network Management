@@ -1,0 +1,32 @@
+do not use () in syntax just change what in them
+
+firewall SNMP on pfsense
+go to firewall ip to access pfsense
+find SNMP 
+enable SNMP Daemon
+set port to 161, location, system contact, and read only community string
+bind on LAN
+
+install SNMP client on linux
+sudo yum install net-snmp-utils
+
+install SNMP server on linux
+sudo yum install net-snmp-utils net-snmp
+backup /etc/snmp/snmpd.conf
+change /etc/snmp/snmpd.conf to 
+"
+com2sec myNetwork (ip address of network/subnet mask) (community string)
+group myROGroup v2c myNetwork
+view all included .1 80
+access myROGroup "" any noauth exact all none none
+"
+restart service
+allow port 161 udp firewall
+
+query SNMP values on linux
+snmpwalk -Os -c (communitystring) -v2c (computer querying) system
+
+
+install SNMP on Windows AD
+go to add roles and features, role based features
+go to features tab and intall snmp
