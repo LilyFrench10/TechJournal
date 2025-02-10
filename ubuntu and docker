@@ -1,0 +1,34 @@
+Setup for network config on Ubuntu
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens160:
+      dhcp4: false
+      addresses:
+        - ipaddressyouwanttoset/subnet
+      routes
+        - to: default
+          via: lan/firewallip
+      nameservers:
+        search: [domainname]
+        addresses: [domaincontroller]
+
+
+
+
+to add user in ubuntu
+adduser name
+usermod -a -G sudo name
+
+
+docker
+to copy text from a clipboard in windows to a file in a ssh linux session do 
+echo "pasted text" > file.txt
+
+to run docker in the background
+docker-compose up -d 
+
+to view what is running
+docker ps
+
