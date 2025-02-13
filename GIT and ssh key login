@@ -17,6 +17,12 @@ ex: sudo chown -R sys265:sys265 /home/sys265/.ssh when ssh into sys265
 
 
 GIT
+git clone https://github/direct/link/to/page
+
+(for these use the email/name associated with the account)
+git config user.email name@email to set email
+git config user.name username to set username 
+
 To change file in git you must have the file changed, do git add . , make a git commit message “git commit -m “text”, and git push
 
 git pull, updates the git repository in your system from the github page
