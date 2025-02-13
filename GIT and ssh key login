@@ -1,0 +1,23 @@
+For ssh key login, the client (the user doing the ssh) needs to have the private and public key on the user sshing from, and 
+the user account on the server needs the public key only. 
+
+to only allow ssh via key edit /etc/ssh/sshd_config,
+change PubKeyAuthentication to yes 
+PasswordAuthentication no 
+ChallengeResponseAuthentication no 
+AuthorizedKeysFile .ssh/authorized_keys, and ensure the public key is stoed in the authorized_key file
+
+ensure the proper permissions are set 
+
+chmod 700 /.ssh
+chmod 600 to authorized keys
+ensure owner is account ssh into
+ex: sudo chown -R sys265:sys265 /home/sys265/.ssh when ssh into sys265
+
+
+
+GIT
+To change file in git you must have the file changed, do git add . , make a git commit message “git commit -m “text”, and git push
+
+git pull, updates the git repository in your system from the github page
+ password authentication does not work, use git key for password, easier using ssh onto a linux system since you can copy and paste
