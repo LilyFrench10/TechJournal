@@ -14,8 +14,9 @@ network:
         search: [domainname]
         addresses: [domaincontroller]
 
-
-
+netplan apply
+to set hostname 
+hostnamectl set-hostname  name
 
 to add user in ubuntu
 adduser name
