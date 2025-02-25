@@ -1,0 +1,28 @@
+Ssh no passwords
+On user of same name make private and public key 
+Ssh-keygen -t rsa -C “text”
+
+Then transfer the public key to the system you want to ssh into
+Ssh-copy-id -i ~/.ssh/publickeyname name@ip
+
+Increase time for shh
+Eval $(ssh-agent)
+Ssh-add -t 14400 
+if you can not ssh into a system, but can ping it check firewall rules
+
+
+chocolatey
+https://docs.chocolatey.org/en-us/choco/setup/ 
+
+
+ANSIBLE
+mkdir -p ansible/roles
+this is where your installed roles and yml files will go
+
+to run a playbook in ansible
+ansible-playbook -i inventory.txt roles/ymlfile.yml
+#inventory.txt is a file in the ansible directory that contains hosts and properties 
+#for windows add -u and the user@domain at the end
+
+to use most playbooks you need to install the role that is called in the yml file
+ansible galaxy can be used to find roles to download and their documentation
