@@ -1,0 +1,12 @@
+to create an OU in powershell
+New-ADOrganizationalUnit -Name "name" -Path "DC=domain,DC=.name"
+to move items into it
+Move-ADObject -Identity "CN=hostname/users name,OU=currentou,DC=domain,DC=.name" -TargetPath "OU=oumoveto,DC=domain,DC=.name"
+
+to delete an ou in powershell
+Set-ADOrganizationalUnit -Identity "OU=OUdeleting,DC=domain,DC=.name" -ProtectedFromAccidentalDeletion $false
+Remove-ADOrganizationalUnit -Identity "OU=OUdeleting,DC=domain,DC=.name"
+
+
+to get logs 
+Get-WinEvent -LogName name| Where-Object { information to search by suc has id, providername, or message"
