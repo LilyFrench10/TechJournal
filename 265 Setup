@@ -13,7 +13,7 @@ cset ip, dns/subnet, and gateway
 create user by going to computer management- ad neww user, then adding them to the administrator group to make them an admin
 
 to change computer name this pc, properties, change settings, change, to renamethis computer
-
+to join domain ensure you are connected to the DNS server the DC is, then use this pc, properties
 
 Windows Server command line
 sconfig
