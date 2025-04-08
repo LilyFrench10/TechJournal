@@ -1,3 +1,13 @@
+add user with same name and passwords on all systems
+add user on rocky
+adduser name
+passwd name
+sudo usermod -aG wheel name
+
+add user on ubuntu
+sudo adduser --home /home/username username
+sudo usermod -aG sudo username
+
 Ssh no passwords
 On user of same name make private and public key 
 Ssh-keygen -t rsa -C “text”
