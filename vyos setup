@@ -1,0 +1,28 @@
+hostname
+configure
+set system host-name name
+commit 
+save
+exit
+
+interfaces
+configure
+set interfaces thernet ethX description decriptiontext
+commit
+save
+exit
+
+configure
+set interfaces ethernet ethX address ip/mask
+commit
+save
+exit
+
+
+gateway and dns forwarding
+configure
+set protocols static route 0.0.0.0/0 next-hop ip4forwarding
+set system name-server ip4dns
+commit
+save
+exit
