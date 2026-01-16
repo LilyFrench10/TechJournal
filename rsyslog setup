@@ -1,0 +1,18 @@
+rsyslog server
+allow syslog traffic through firewall
+sudo firewall-cmd --permanent --add-service=syslog
+sudo firewall-cmd --reload
+
+recieve messages on port 514
+
+edit the /etc/rsyslog.conf file
+uncomment the last 2 lines in the sectionjs starting with "provides udp/tcp syslog reception"
+systemctl restart rsyslog
+
+test using 
+netstat -tupan : grep 514
+
+rsyslog client
+create file "/etc/rsyslog.d/filename.conf" containing one line
+user.notice @syslogserverip
+
