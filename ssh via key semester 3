@@ -1,0 +1,8 @@
+client = ssh from
+server = ssh to
+
+on client 
+ssh-keygen -t ed25519 -C "user@client"
+ssh-copy-id user@server_ip
+enter the password for that user
+ssh in
