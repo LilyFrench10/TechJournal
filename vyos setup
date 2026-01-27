@@ -5,6 +5,11 @@ commit
 save
 exit
 
+add new user/change password
+set system login user newusername authentication plaintext-password 'PASSWORD'
+
+
+
 interfaces
 configure
 set interfaces thernet ethX description decriptiontext
