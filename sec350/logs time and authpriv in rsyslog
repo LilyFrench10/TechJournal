@@ -1,0 +1,17 @@
+timing in syslog
+
+high precision timestamps
+- /etc/rsyslog file comment out #$ActionFileDefaultTemplate RSYSLOG TraditionalFileFormat
+- restart rsyslog
+
+
+
+authpriv syslog client
+ubuntu
+in the /etc/rsyslog.d/sec350.conf add line authpriv.* @serverip
+the sec350.conf name in unimportant
+
+
+vyos
+conf
+set system syslog remote serverip facility authpriv level info

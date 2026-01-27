@@ -1,6 +1,0 @@
-syslog
-
-high precision timestamps
-- /etc/rsyslog file comment out #$ActionFileDefaultTemplate RSYSLOG TraditionalFileFormat
-- restart rsyslog
-
