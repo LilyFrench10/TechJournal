@@ -16,3 +16,14 @@ rsyslog client
 create file "/etc/rsyslog.d/filename.conf" containing one line
 user.notice @syslogserverip
 
+file for dynamicallly creating log files from hostname and date, save to /etc/rsyslog.d/newfilename
+https://raw.githubusercontent.com/gmcyber/sec350-share/main/03-sec350.conf 
+
+module(load="imudp")
+input(type="imudp" port="514" ruleset="RemoteDevice")
+template(name="DynFile" type="string"
+	string="/var/log/remote-syslog/%HOSTNAME%/%$YEAR%.%$MONTH%.%$DAY%.%PROGRAMNAME%.log"
+)
+ruleset(name="RemoteDevice"){
+	action(type="omfile" dynaFile="DynFile")
+}
