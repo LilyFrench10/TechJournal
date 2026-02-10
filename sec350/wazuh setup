@@ -1,0 +1,10 @@
+Installation
+On server
+curl -sO https://packages.wazuh.com/4.3/wazuh-install.sh && sudo bash ./wazuh-install.sh -a -i
+
+At the  end of installation there will be a username/password
+
+On management
+Go to the wazuh web page from the serverip and enter the user/pass given
+
+Use the agents screen to get installation instructions for an agent given its os. This will give you syntax that you can run on the agent machine to install it.
