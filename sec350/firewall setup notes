@@ -1,0 +1,21 @@
+set firewall zone WAN
+set firewall zone DMZ
+set firewall zone LAN
+set firewall zone WAN member interface eth0
+set firewall zone DMZ member interface eth1
+set firewall zone LAN member interface eth2
+
+set firewall ipv4 name WAN-to-DMZ default-action drop
+set firewall ipv4 name WAN-to-DMZ default-log 
+set firewall zone DMZ from WAN firewall name WAN-to-DMZ
+
+Example rule setup
+set firewall ipv4 name WAN-DMZ rule 10 action accept
+set firewall ipv4 name WAN-DMZ rule 10 description "Allow HTTP from WAN to DMZ"
+set firewall ipv4 name WAN-DMZ rule 10 protocol tcp
+set firewall ipv4 name WAN-DMZ rule 10 destination port 80
+set firewall ipv4 name WAN-DMZ rule 10 destination address <IP>
+
+To allow established connections togo back out
+ set firewall ipv4 name DMZ-to-LAN rule 1 action accept
+set firewall ipv4 name DMZ-to-LAN rule 1 state established 
