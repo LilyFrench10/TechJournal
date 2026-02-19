@@ -1,0 +1,8 @@
+#creating
+set nat destination rule xx
+set nat destination rule xx translation address ipfordwardto
+set nat destination rule xx translation port portforwardto
+set nat destination rule xx destination port portforwardfrom
+set nat destination rule xx translation inbound-interface name ethx
+
+#this will create a rule that makes connections to the fw on the destination port go to the translation address/port
