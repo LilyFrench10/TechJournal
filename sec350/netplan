@@ -1,0 +1,20 @@
+/etc/netplan/50-cloud-init.yaml
+
+network
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens18:
+      dhcp: false
+      addresses:
+        - ipofdevice/subnet
+      routes:
+        - to: default
+          via: routerip
+      nameservers:
+        addresses:
+          - routerip
+
+
+
+#ens18 is the network interface name, you can check what it is using ip a
