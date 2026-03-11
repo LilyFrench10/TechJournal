@@ -1,9 +1,11 @@
-##outdated, check sec350
 client = ssh from
 server = ssh to
 
 on client 
-ssh-keygen -t ed25519 -C "user@client"
+ssh-keygen -t ed25519 -C "user@client" 
+
 ssh-copy-id user@server_ip
+#this can be done in windows using Get-Content $env:USERPROFILE\.ssh\id_rsa.pub | ssh <user>@<hostname> "cat >> .ssh/authorized_keys"
+
 enter the password for that user
 ssh in
