@@ -1,0 +1,19 @@
+to allow domain connections
+create port group
+
+set firewall group port-group AD-PORTS port 53
+set firewall group port-group AD-PORTS port 88
+set firewall group port-group AD-PORTS port 135
+set firewall group port-group AD-PORTS port 389
+set firewall group port-group AD-PORTS port 445
+set firewall group port-group AD-PORTS port 464
+set firewall group port-group AD-PORTS port 636
+set firewall group port-group AD-PORTS port 3268
+set firewall group port-group AD-PORTS port 3269
+set firewall group port-group AD-PORTS port 137-139
+set firewall group port-group AD-PORTS port 49152-65535
+
+allow group through firewall
+set firewall name LAN-TO-MGMT rule 40 action accept
+set firewall name LAN-TO-MGMT rule 40 destination group port-group AD-PORTS
+set firewall name LAN-TO-MGMT rule 40 protocol tcp_udp
