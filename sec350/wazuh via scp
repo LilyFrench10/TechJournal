@@ -1,0 +1,14 @@
+used to get wazuh with no internet connection, but a ssh oconnection to a machine that does
+
+on device with internet download the agent file
+ex:
+wget https://packages.wazuh.com/4.x/windows/wazuh-agent-4.3.11-1.msi
+
+on device without internet copy file via scp
+ex:
+scp user@ubuntu-ip:/home/user/wazuh-agent-4.3.11-1.msi C:\Users\YourName\Downloads\
+
+then on no internet device install the agent
+ex:
+msiexec.exe /i C:\Path\To\wazuh-agent-4.3.11-1.msi /q WAZUH_MANAGER="172.16.200.10" WAZUH_REGISTRATION_SERVER="172.16.200.10" WAZUH_AGENT_GROUP="windows"
+NET START WazuhSvc
