@@ -18,3 +18,4 @@ network
 
 
 #ens18 is the network interface name, you can check what it is using ip a
+#if dhcp fails on apply use dhcp4 or dhcp6 in the line
